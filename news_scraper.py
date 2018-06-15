@@ -3,15 +3,22 @@ import requests
 
 
 def display(data):
-    #print(data['articles'])
+    # print(data['articles'])
+    urls = []
 
+    # Print title and description of each article
     for article in data['articles']:
         print(article['title'])
-        print(article['url'])
+        urls.append(article['url'])
         print(article['description'])
         print('')
 
-def get_articles(): 
+    # Print article links
+    for url in urls:
+        print(url)
+
+
+def get_articles():
     url = ('https://newsapi.org/v2/top-headlines?'
             'sources=the-wall-street-journal&'
             'apiKey=6852f94cb1ed44f98e6845a2b21c28c9')
@@ -19,7 +26,8 @@ def get_articles():
     data = response.json()
     display(data)
 
-if __name__=='__main__':
-    #sources = ['the-wall-street-journal&', ...]
-    #get_article(sources)
+
+if __name__ == '__main__':
+    # sources = ['the-wall-street-journal&', ...]
+    # get_article(sources)
     get_articles()
