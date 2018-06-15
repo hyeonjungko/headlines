@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 import requests
 
+# TODO: schedule the job to execute every 24hrs w/ schedule library
 # TODO: implement email method w/ smtplib, email
 
 def display(data):
