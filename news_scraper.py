@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 import requests
 
+# TODO: implement email method w/ smtplib, email
 
 def display(data):
     # print(data['articles'])
@@ -28,6 +29,7 @@ def get_articles():
 
 
 if __name__ == '__main__':
+    # TODO: implement sources & country option
     # sources = ['the-wall-street-journal&', ...]
     # get_article(sources)
     get_articles()
