@@ -4,9 +4,13 @@ import requests
 # TODO: schedule the job to execute every 24hrs w/ schedule library
 # TODO: implement email method w/ smtplib, email
 
-def display(data):
+def display(source,data):
     # I don't need urls
     #urls = []
+
+    # Print source title
+    print(source)
+    print('')
 
     # Print title and description of each article
     for article in data['articles']:
@@ -20,17 +24,19 @@ def display(data):
     #    print(url)
 
 
-def get_articles():
+def get_wsj():
+    source = '----------THE WALL STREET JOURNAL----------'
     url = ('https://newsapi.org/v2/top-headlines?'
             'sources=the-wall-street-journal&'
             'apiKey=6852f94cb1ed44f98e6845a2b21c28c9')
     response = requests.get(url)
     data = response.json()
-    display(data)
+    
+    display(source,data)
 
 
 if __name__ == '__main__':
     # TODO: implement sources & country option
     # sources = ['the-wall-street-journal&', ...]
     # get_article(sources)
-    get_articles()
+    get_wsj()
