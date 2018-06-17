@@ -5,19 +5,19 @@ import requests
 # TODO: implement email method w/ smtplib, email
 
 def display(data):
-    # print(data['articles'])
-    urls = []
+    # I don't need urls
+    #urls = []
 
     # Print title and description of each article
     for article in data['articles']:
-        print(article['title'])
-        urls.append(article['url'])
+        print(article['title'].upper())
+        #urls.append(article['url'])
         print(article['description'])
         print('')
 
     # Print article links
-    for url in urls:
-        print(url)
+    #for url in urls:
+    #    print(url)
 
 
 def get_articles():
