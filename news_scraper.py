@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 import requests
+import textwrap
 
 # TODO: schedule the job to execute every 24hrs w/ schedule library
 # TODO: implement email method w/ smtplib, email
@@ -16,8 +17,10 @@ def display(source,data):
     for article in data['articles']:
         print(article['title'].upper())
         #urls.append(article['url'])
-        print(article['description'])
+        print(textwrap.wrap(str(article['description']),70))
         print('')
+
+    print('----------------------------------------')
 
     # Print article links
     #for url in urls:
