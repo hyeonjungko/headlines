@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 import requests
+import config
 import textwrap
 
 # TODO: schedule the job to execute every 24hrs w/ schedule library
@@ -31,7 +32,7 @@ def get_wsj():
     source = '----------THE WALL STREET JOURNAL----------'
     url = ('https://newsapi.org/v2/top-headlines?'
             'sources=the-wall-street-journal&'
-            'apiKey=6852f94cb1ed44f98e6845a2b21c28c9')
+            'apiKey=' + config.api_key)
     response = requests.get(url)
     data = response.json()
     
