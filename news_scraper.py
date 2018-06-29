@@ -18,7 +18,7 @@ def display(source,data):
     for article in data['articles']:
         print(article['title'].upper())
         #urls.append(article['url'])
-        print(textwrap.wrap(str(article['description']),70))
+        print(article['description'])
         print('')
 
     print('----------------------------------------')
